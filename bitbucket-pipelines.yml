@@ -1,0 +1,10 @@
+image: gcc:8.2
+
+pipelines:
+  default:
+    - step:
+        script:
+          - autoreconf --install
+          - ./configure
+          - make
+          - make check
