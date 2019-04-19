@@ -25,3 +25,8 @@ check_PROGRAMS = test-libcrcrc
 test_libcrcrc_SOURCES = test/test-libcrcrc.c
 test_libcrcrc_CFLAGS = $(AM_CFLAGS)
 test_libcrcrc_LDFLAGS = -L@builddir@ -lcrcrc
+
+.PHONY: test
+test: check
+
+CLEANFILES = gmon.out
