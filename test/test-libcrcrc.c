@@ -1,10 +1,10 @@
 
 #include <assert.h>
 #include <stdlib.h>
-
 #include <stdio.h>
 #include <stdint.h>
 #include <inttypes.h>
+#include <arpa/inet.h>
 
 #include "libcrcrc.h"
 
@@ -18,7 +18,7 @@ static void crc_printf( uint16_t crc ) {
 // VESC get values: 0x 02 01 *04* =40 84= 03
 static int test_crc16xmodem_04( void ) {
     const char data = 0x04;
-    uint16_t expected = 0x4084;
+    uint16_t expected = htons( 0x4084 );
     uint16_t crc = 0;
     crc = crc16xmodem( &data, 1 );
     assert( crc == expected );
@@ -36,7 +36,7 @@ static int test_crc16xmodem_04_inclusive( void ) {
 
 static int test_crc16ccitt_false( void ) {
     const char data = 0x03;
-    uint16_t expected = 0xD193;
+    uint16_t expected = htons( 0xD193 );
     uint16_t crc = 0;
     crc = crc16ccitt_false( &data, 1 );
     assert( crc == expected );
