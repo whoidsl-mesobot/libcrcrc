@@ -1,3 +1,4 @@
+#include <arpa/inet.h>
 
 #include "libcrcrc.h"
 
@@ -7,9 +8,9 @@
 #include "crc16ccitt_false.h"
 
 uint16_t crc16xmodem( const void * data, size_t length ) {
-    return crc16xmodem_byte( 0, data, length );
+    return htons( crc16xmodem_byte( 0, data, length ) );
 }
 
 uint16_t crc16ccitt_false( const void * data, size_t length ) {
-    return crc16ccitt_false_byte( 0xFFFF, data, length );
+    return htons( crc16ccitt_false_byte( 0xFFFF, data, length ) );
 }
