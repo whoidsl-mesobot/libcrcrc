@@ -17,7 +17,7 @@ int crc16_fprintf( FILE * stream, uint16_t crc ) {
 
 
 int crc16_calculate_fprintf( FILE * stream,
-        void * crc16( const void * data, size_t length ),
+        uint16_t crc16( const void * data, size_t length ),
         const void * data, size_t length ) {
     uint16_t crc = crc16( data, length );
     int n = 0;
