@@ -1,4 +1,4 @@
-AC_INIT([libcrcrc], [0.1], [m.j.stanway@alum.mit.edu])
+AC_INIT([libcrcrc], [0.2], [m.j.stanway@alum.mit.edu])
 AM_INIT_AUTOMAKE([subdir-objects dist-xz -Wall -Werror foreign])
 
 AM_PROG_AR

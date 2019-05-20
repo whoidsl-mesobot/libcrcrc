@@ -1,22 +1,21 @@
 ACLOCAL_AMFLAGS = -I m4
-AM_CFLAGS = -Wall -std=gnu99 -pg -g -I $(top_srcdir)/include
+AM_CFLAGS = -I $(top_srcdir)/include
 
 lib_LTLIBRARIES = libcrcrc.la
 
 dist_doc_DATA = README.md
 
-include_HEADERS = include/libcrcrc.h
-
-# pkginclude_HEADERS = src/crc16xmodem.h src/crc16....h
+pkginclude_HEADERS = \
+		include/crc16xmodem.h \
+		include/crc16ccitt_false.h \
+		include/libcrcrc.h
 
 libcrcrc_la_SOURCES = src/libcrcrc.c \
-		     src/crc16xmodem.h \
 		     src/crc16xmodem.c \
-		     src/crc16ccitt_false.h \
 		     src/crc16ccitt_false.c
 
 libcrcrc_la_CFLAGS = $(AM_CFLAGS)
-libcrcrc_la_LDFLAGS = -version-info 0:1 -module -shared -export-dynamic
+libcrcrc_la_LDFLAGS = -version-info 0:2 -module -shared -export-dynamic
 
 TESTS = test-libcrcrc
 

@@ -5,10 +5,6 @@
 
 #include "libcrcrc.h"
 
-// decide whether to expose all methods and install all headers, or just the
-// main `libcrcrc.h` -- for now, get the other headers here in the `.c`
-#include "crc16xmodem.h"
-#include "crc16ccitt_false.h"
 
 // for sanity...
 int crc16_fprintf( FILE * stream, uint16_t crc ) {
