@@ -1,0 +1,13 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+crcrc_db_dir=@sysconfdir@/crcrc/db
+
+Name: @PACKAGE_NAME@
+Description: a convenient repository of cyclic redundancy checks
+Version: @PACKAGE_VERSION@
+Cflags: -I${includedir}/crcrc
+Requires: @AX_PACKAGE_REQUIRES@
+Requires.private: @AX_PACKAGE_REQUIRES_PRIVATE@
