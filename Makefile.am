@@ -1,4 +1,3 @@
-ACLOCAL_AMFLAGS = -I m4
 AM_CFLAGS = -I $(top_srcdir)/include
 
 lib_LTLIBRARIES = libcrcrc.la
