@@ -1,4 +1,4 @@
-AM_CFLAGS = -I $(top_srcdir)/include
+AM_CFLAGS = -std=gnu99 -I $(top_srcdir)/include
 
 lib_LTLIBRARIES = libcrcrc.la
 
